@@ -1,0 +1,13 @@
+angular.module('meanStackApp',
+        [
+            'ngRoute',
+            'appRoutes',
+            'HeaderCtrl',
+            'NewArticleCtrl',
+            'EditArticleCtrl',
+            'MainCtrl',
+            'BlogCtrl',
+            'AboutCtrl',
+            'LoginCtrl',
+            'BlogService'
+        ]);

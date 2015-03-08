@@ -1,0 +1,16 @@
+<div class="jumbotron text-left">
+    <input type="search" ng-model="q" placeholder="filter articles..." />
+    <div data-ng-repeat="article in articles | filter:q as results">
+        <div class="article">
+            <div class="title clearfix">
+                <a data-ng-href="#/edit-article/{{ article._id }}">
+                    <h3 class="left">{{article.title}}</h3><span class="article-date">{{ article.date | date : 'medium'}}</span >
+                </a>
+            </div>
+            <p>
+                {{article.body}}
+            </p>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
