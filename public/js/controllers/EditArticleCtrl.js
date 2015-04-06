@@ -1,22 +1,31 @@
 angular.module('EditArticleCtrl', []).controller('EditArticleController', function($scope, $routeParams, $window, BlogService){
-    $scope.title = 'Edit article';
 
     $scope.save = function(article){
 
-        if(article._id === undefined ){
+        if(article._id === undefined || article._id == '' ){
+            console.log('post a new article');
             BlogService.post(article);
 
           } else {
-              console.log(article);
               BlogService.put(article);
           }
             $window.location = '#/blog';
     };
 
-    BlogService.getById($routeParams.id)
-        .then(function(result){
-            $scope.article = result.data;
-        },
-        function(){ //error
-     });
+    if($routeParams.id != undefined){
+        $scope.title = 'Edit article';
+
+        BlogService.getById($routeParams.id)
+            .then(function(result){
+                $scope.article = result.data;
+            },
+            function(){ //error
+         });
+    } else {
+        $scope.title = 'Create a new article';
+
+        //new article
+        $scope.article = {title: '', body: '', _id: 0};
+        console.log('try to create a new article');
+    }
 });

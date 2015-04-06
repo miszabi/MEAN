@@ -19,7 +19,7 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 
 		.when('/new-article',{
 			templateUrl: 'views/edit-article.html',
-			controller : 'NewArticleController'
+			controller : 'EditArticleController'
 		})
 
 		.when('/login',{

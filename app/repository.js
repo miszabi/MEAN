@@ -1,5 +1,6 @@
 var models = require('./models/blog'),
-    _ = require('lodash');
+    _ = require('lodash'),
+    _log = require('./logging/loggingWrapper');
 
 var Repository = function(key){ 
   this.key = key;
@@ -13,50 +14,47 @@ Repository.prototype.single = function(obj){
    models[this.key].findOne(obj, function (err, model){
     if (err) {
 
-      console.log(err);
-      return null;
+        _log.error(err);
+        return null;
     } else {
-      
-      return model;
+        return model;
     }
   });
 };
 
 Repository.prototype.find = function(callback, criteria){
-  if(criteria == undefined){
-    criteria = {};
-  }
+    if(criteria == undefined){
+        criteria = {};
+    }
 
-  models[this.key].find(criteria, callback);
-}
+    models[this.key].find(criteria, callback);
+};
 
 Repository.prototype.findOne = function(callback, criteria){
-  if(criteria == undefined){
+    if(criteria == undefined){
     criteria = {};
-  }
-  
-  models[this.key].findOne(criteria, callback);
-}
+    }
+
+    models[this.key].findOne(criteria, callback);
+};
 
 Repository.prototype.store = function(model, callback){
   
-  model.save(function (err, model){
-    if (err){
-      console.log(err);
+    model.save(function (err, model){
+        if (err){
+          console.log(err);
 
-      callback({success: 0});
-    }
-    else
-    {
-      callback(model);
-    }
-  });
+          callback({success: 0});
+        }
+        else
+        {
+          callback(model);
+        }
+    });
 };
-//http://mongoosejs.com/docs/documents.html
-Repository.prototype.update = function(model, callback){
-    var id = model._id;
-    delete model._id;
-    models[this.key].findByIdAndUpdate(id,{$set : model}, {new : true}, callback);
+
+Repository.prototype.update = function(id, updateProps, callback){
+    models[this.key].findByIdAndUpdate(id, { $set : updateProps }, callback);
 };
 
 module.exports = Repository;

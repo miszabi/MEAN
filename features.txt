@@ -1,0 +1,10 @@
+Simple private blog,
+only authenticated users can view, add, update or delete commments blog articles.
+
+1. Create a new article
+2. Edit an existent article :  add an edit button -  the link from title should be used to navigate to full article
+3. Comment an existing article - This feature is working now but should be move ... read more
+4. Poll the existing article - is this usefull or not ....
+5. Logging
+6. Make a pretty design
+

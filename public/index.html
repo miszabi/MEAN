@@ -9,11 +9,13 @@
     <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/blog_bootsrap.css">
+    <link rel="stylesheet" href="libs/ngDialog/css/ngDialog.min.css">
 
     <script src="libs/jquery/dist/jquery.min.js"></script>
     <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="libs/angular/angular.min.js"></script>
     <script src="libs/angular-route/angular-route.min.js"></script>
+    <script src="libs/ngDialog/js/ngDialog.min.js"></script>
     <script src="js/controllers/HeaderCtrl.js"></script>
     <script src="js/controllers/MainCtrl.js"></script>
     <script src="js/controllers/BlogCtrl.js"></script>
@@ -51,8 +53,8 @@
                     -->
                     <li ng-hide="isAuthenticated()" ng-class="{ active : isActive('/login')}"><a href="#/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                     <li ng-show="isAuthenticated()" ng-class="{ active : isActive('/logout')}"><a href="#/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
-                    <li ng-show="isAuthenticated()" style="color: #9d9d9d; font-family: 'Glyphicons Halflings';" ><span class="glyphicon glyphicon-user" style="padding-top: 15px;"></span>{{authenticatedUser()}}</li>
-
+                    <!--<li ng-show="isAuthenticated()" style="color: #9d9d9d; font-family: 'Glyphicons Halflings';" ><span class="glyphicon glyphicon-user" style="padding-top: 15px;"></span>{{authenticatedUser()}}</li>
+-->
                     <li><a></a></li>
                 </ul>
             </div><!--/.nav-collapse -->
@@ -62,7 +64,7 @@
 	   <div class='ng-view content'></div>
     </div>
     <div class='footer'>
-        <div class='footer-container'> &reg; Rapberry PI</div>
+        <div class='footer-container'> &reg; Raspberry PI</div>
     </div>
 </body>
 </html>

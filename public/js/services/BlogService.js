@@ -30,8 +30,15 @@ angular.module('BlogService', []).factory('BlogService',['$http', '$q', function
 			return $http.put('api/blogs', blogData);
 		},
 
-		delete : function (id){
+		remove : function (id){
 			return $http.delete('api/blogs/'+ id);		
+		},
+
+		commentArticle : function(comment){
+			//console.log('try to save comment');
+			return $http.post('api/comment', comment);
 		}
+
+
 	};
 }]);

@@ -1,5 +1,8 @@
-<div class="jumbotron text-left">
+<div class="jumbotron text-left h100percent">
     <input type="search" ng-model="q" placeholder="filter articles..." />
+    <div class="right">
+        <a data-ng-href="#/new-article">New article</a>
+    </div>
     <div data-ng-repeat="article in articles | filter:q as results">
         <div class="article">
             <div class="title clearfix">
@@ -10,6 +13,46 @@
             <p>
                 {{article.body}}
             </p>
+            <div class="clearfix"></div>
+
+            <!--<div class="comments">
+                <div class="comment-container">
+                    <div class="comment-header">
+                        <span>Comments : {{ article.comments.length }}</span>
+                        <div class="right">
+                            <a class="comment" ng-click="showCommentForm  = !showCommentForm; resetCommentModel()">Comment article</a>
+                        </div>
+                    </div>
+                    <div ng-show="showCommentForm" ng-form="comment_form_{{$index}}">
+                        <div class="form-group">
+                            <label class="control-label col-xs-2">Name</label>
+                            <div class="col-xs-10">
+                                <input type="text" class="form-control" ng-model="comment.userName" ng-required/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-xs-2">Comment</label>
+                            <div class="col-xs-10">
+                                <textarea class="form-control" ng-model="comment.body" ng-required></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-xs-2"></label>
+                            <div class="col-xs-10">
+                                <input type="submit" ng-click="save(article._id, comment)" value="Save" class="btn btn-primary" />
+                            </div>
+                        </div>
+                    </div>
+                    <div data-ng-repeat="acomment in article.comments">
+
+                        <div class="content">
+                            <div class="commented-by">{{ acomment['userName']}} / {{acomment['date'] | date : medium}}</div>
+                            <div class="comment-body">{{ acomment['body']}}</div>
+                        </div>
+                        <div class="comment-footer"></div>
+                    </div>
+                </div>
+            </div>-->
             <div class="clearfix"></div>
         </div>
     </div>

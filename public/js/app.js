@@ -2,6 +2,7 @@ angular.module('meanStackApp',
         [
             'ngRoute',
             'appRoutes',
+            'ngDialog',
             'HeaderCtrl',
             'NewArticleCtrl',
             'EditArticleCtrl',

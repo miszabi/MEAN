@@ -1,6 +1,5 @@
-// grab the mongoose module
+//dtabase schema
 var mongoose = require('mongoose');
-
 var Schema = mongoose.Schema;
 
 var articleSchema = new Schema({
@@ -8,7 +7,12 @@ var articleSchema = new Schema({
   category: String,
   author: String,
   body:   String,
-  comments: [{ body: String, date: {type:Date, default: Date.now }}],
+  comments: [
+      {
+          userName: { type : String},
+          body: {type : String},
+          date: {type:Date, default: Date.now }
+      }],
   date: { type: Date, default: Date.now },
   active: Boolean,
   meta: {
@@ -18,14 +22,24 @@ var articleSchema = new Schema({
   }
 });
 
-var categorySchema = new Schema({name : String, createDate : { type: Date, default:Date.now}});
+var categorySchema = new Schema(
+    {
+        name : String,
+        createDate : { type: Date, default:Date.now}
+    });
 
-var userSchema = new Schema({firstName: String, lastName: String, userName : String, password: String, active: Boolean, createDate : {type:Date, default : Date.now}});
+var userSchema = new Schema(
+    {
+        firstName: String,
+        lastName: String,
+        userName : String,
+        password: String,
+        active: Boolean,
+        createDate : {type:Date, default : Date.now}
+    });
 
-// define our models
-// module.exports allows us to pass this to other files when it is called
 module.exports = { 
-    blog : mongoose.model('Articles', articleSchema),
+    article : mongoose.model('Articles', articleSchema),
 
     category : mongoose.model('Category', categorySchema),
 
