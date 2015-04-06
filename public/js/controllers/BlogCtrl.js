@@ -23,9 +23,7 @@ angular.module('BlogCtrl', []).controller('BlogController', function($scope, $wi
 	BlogService.get().then(function (result) {
 		//success
 		$scope.articles = result.data;
-
-		console.log(result.data);
 	}, function () {
-
+		///TODO handle error
 	});
 });

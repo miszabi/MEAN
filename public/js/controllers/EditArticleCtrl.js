@@ -3,7 +3,6 @@ angular.module('EditArticleCtrl', []).controller('EditArticleController', functi
     $scope.save = function(article){
 
         if(article._id === undefined || article._id == '' ){
-            console.log('post a new article');
             BlogService.post(article);
 
           } else {
@@ -23,9 +22,7 @@ angular.module('EditArticleCtrl', []).controller('EditArticleController', functi
          });
     } else {
         $scope.title = 'Create a new article';
-
         //new article
         $scope.article = {title: '', body: '', _id: 0};
-        console.log('try to create a new article');
     }
 });
