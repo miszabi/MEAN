@@ -12,7 +12,7 @@ module.exports = function(app) {
 
     app.post('/api/authenticate', function(req, res){
         var repo = new Repository('user');
-console.log('auth' );
+
         repo.findOne(function(err, user){
             if(err){
                res.json(err);
@@ -67,7 +67,6 @@ console.log('auth' );
         }
 
         var repo = new Repository('article');
-        console.log(repo);
         repo.find(function(err, blogs) {
 
             if (err) {
@@ -86,17 +85,18 @@ console.log('auth' );
             if (err) {
                 res.json(err);
             }
+            repo.update(req.param("id"), { viewCount : blog.viewCount + 1}, function(){});
 
             res.json(blog); // return single blog in JSON format
         }, {_id: req.param("id")});
     });
 
     app.put('/api/blogs', function(req, res){
-                var blog = _.extend({}, req.body);
+        var blog = _.extend({}, req.body);
 
         var repo = new Repository('article');
 
-        repo.update(blog._id, {title: blog.title, body : blog.body}, function (model){
+            repo.update(blog._id, {title: blog.title, headLine : blog.body.substring(0, 100),  body : blog.body}, function (model){
             clearBlogCache();
             res.json(model);
         });
@@ -108,6 +108,7 @@ console.log('auth' );
         var blog = new Blog({
               "title" :  req.body.title,
               "author": "szabi",
+              "headLine" : req.body.body.substring(0, 100) +'...',
               "body":   req.body.body,
               "comments": [],
               "active": req.body.active,

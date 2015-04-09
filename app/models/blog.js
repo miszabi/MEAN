@@ -6,6 +6,7 @@ var articleSchema = new Schema({
   title:  String,
   category: String,
   author: String,
+  headLine : String,
   body:   String,
   comments: [
       {
@@ -15,6 +16,7 @@ var articleSchema = new Schema({
       }],
   date: { type: Date, default: Date.now },
   active: Boolean,
+  viewCount : Number,
   meta: {
     upvotes: Number,
     downvotes: Number,
