@@ -23,6 +23,7 @@ module.exports = function(app) {
                 res.json({firstName : user.firstName, lastName : user.lastName, _id : user._id});
             }
             else{
+                //TODO
                 res.json(null);
             }
         }, {userName : req.body.userName, password : req.body.password});
