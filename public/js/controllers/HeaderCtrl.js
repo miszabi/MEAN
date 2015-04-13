@@ -2,6 +2,7 @@ angular.module('HeaderCtrl',[]).controller("HeaderController", function($scope, 
     $scope.isActive = function (viewLocation) {
         return viewLocation === $location.path();
     };
+
     $scope.authenticatedUser = function (){
         var accountName = $rootScope.accountName;
         return  accountName ?  accountName : '';

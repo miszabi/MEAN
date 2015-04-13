@@ -104,4 +104,6 @@ input:required,input:invalid {
 	height: 100% !important;
 }
 
-
+.ta-hidden-input{
+	display: none !important;
+}
