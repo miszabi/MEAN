@@ -1,21 +1,20 @@
 <div class="jdumbotron text-center">
     <form class="form-horizontal login-form">
 		<fieldset>
-
 		<!-- Form Name -->
 		<legend>Login</legend>
 
 		<!-- Text input-->
-		<div class="control-group">
-		  <div class="controls">
-		    <label class="control-label" for="textinput">Username</label>
-		  	<input id="textinput" name="textinput" ng-model="loginModel.userName" type="text" placeholder="Username" class="input-xlarge" required="">
-		    
-		  </div>
-		</div>
+			<div class="control-group">
+			  <div class="controls">
+				<label class="control-label" for="textinput">Username</label>
+				<input id="textinput" name="textinput" ng-model="loginModel.userName" type="text" placeholder="Username" class="input-xlarge" required="">
+
+			  </div>
+			</div>
 
 		<!-- Password input-->
-		<div class="control-group">
+			<div class="control-group">
 		  <div class="controls">
 		    <label class="control-label" for="passwordinput">Password</label>
 		  	<input id="passwordinput" name="passwordinput" ng-model="loginModel.password" type="password" placeholder="password" class="input-xlarge" required="">
@@ -23,7 +22,7 @@
 		  </div>
 		</div>
 
-		<div class="control-group" style="padding-top: 10px;">
+			<div class="control-group" style="padding-top: 10px;">
 			<div class="controls">
 
 				<input type="submit" class="login-button btn btn-primary" ng-click="authenticate(loginModel)" value="Login">
@@ -32,5 +31,4 @@
 
 		</fieldset>
 	</form>
-
 </div>
