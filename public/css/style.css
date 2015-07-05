@@ -31,7 +31,6 @@ input:required,input:invalid {
 	width: 100%;
 	display: block;
 }
-
 .article .title{
 	border-bottom: 1px solid #c0c0c0;
 }
@@ -119,8 +118,6 @@ input:required,input:invalid {
 .h100percent{
 	height: 100% !important;
 }
-
 .ta-hidden-input{
 	display: none !important;
 }
-
