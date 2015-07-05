@@ -7,6 +7,6 @@
 		"angular": "latest",
 		"angular-route": "latest",
 	  	"ngDialog" : "latest",
-	    "textAngular" : "latest"
+	    	"textAngular" : "latest"
 	} 
 }
