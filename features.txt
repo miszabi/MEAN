@@ -1,10 +1,23 @@
 Simple private blog,
 only authenticated users can view, add, update or delete commments blog articles.
 
+This is a private blog. Only with login can be access resources.
+Why? Because I only store personal things like links, articles wich maybe only for me are usefull.
+
 1. Create a new article
 2. Edit an existent article :  add an edit button -  the link from title should be used to navigate to full article
 3. Comment an existing article - This feature is working now but should be move ... read more
 4. Poll the existing article - is this usefull or not ....
 5. Logging
-6. Make a pretty design
+6. Make a pretty design - mobile?
+7. How many times viewed
+8. Only list page load from db only fields which is showed on the UI. Description should be loaded only one part from it.
+    Maybe I can save as liste below:
+            1: title
+            2: short description - which is composed the first 200 characters from article. Find a way to split in a userfriendly way.
+            3: when logged in user open article for edit load the all description, images.
+9. Make possible to upload images files
+10. Find a code formatter plugin.
+
+
 
