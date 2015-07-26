@@ -37,6 +37,11 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 			controller : 'AboutController'
 		})
 
+		.when('/video',{
+			templateUrl: 'views/video.html',
+			controller : 'VideoController'
+		})
+
 		.otherwise ({
 			redirectTo: '/login'
 		});

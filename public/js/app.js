@@ -10,5 +10,6 @@ angular.module('meanStackApp',
             'BlogCtrl',
             'AboutCtrl',
             'LoginCtrl',
+            'VideoCtrl',
             'BlogService'
         ]);
