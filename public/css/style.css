@@ -37,6 +37,7 @@ input:required,input:invalid {
 .article p {
 	padding-top: 5px;
 	font-size: 13px;
+	overflow-y:auto;
 }
 
 .article h3, .article .article-date {
